@@ -1,0 +1,28 @@
+.doic-center {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+table#doic-level-map {
+    border: 2px solid #c5c5c5;
+    margin: 10px;
+    border-collapse: collapse;
+}
+table#doic-level-map tr {
+    border-bottom: 1px solid #c5c5c5;
+}
+td.doic-level-map-action {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+td.doic-level-map-symbol {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700;
+}
+td.doic-level-map-recurring {
+    padding-left: 20px;
+}
+td.doic-level-map-nonrecurring {
+    padding-left: 20px;
+}
