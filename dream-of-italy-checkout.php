@@ -3,7 +3,7 @@
 Plugin Name: Recurring Payment Checkout: Dream Of Italy
 Plugin URI: http://eighty20results.com/
 Description: Add recurring payment checkbox for membership levels
-Version: 1.0
+Version: 1.1
 Author: Thomas Sjolshagen <thomas@eighty20results.com>
 Author URI: http://eighty20results.com/thomas-sjolshagen/
 License: Limited
@@ -367,14 +367,14 @@ function doic_after_change_membership_level($level_id, $user_id)
 
             //disable this hook so we don't loop
             remove_action("pmpro_after_change_membership_level", "doic_after_change_membership_level", 10);
-            remove_filter('pmpro_cancel_previous_subscriptions', 'my_pmpro_cancel_previous_subscriptions');
+            // remove_filter('pmpro_cancel_previous_subscriptions', 'my_pmpro_cancel_previous_subscriptions');
 
             //change level
             pmpro_changeMembershipLevel($old_level, $user_id);
 
             //add the action back just in case
             add_action("pmpro_after_change_membership_level", "doic_after_change_membership_level", 10, 2);
-            add_filter('pmpro_cancel_previous_subscriptions', 'my_pmpro_cancel_previous_subscriptions');
+            // add_filter('pmpro_cancel_previous_subscriptions', 'my_pmpro_cancel_previous_subscriptions');
 
             //change message shown on cancel page
             add_filter("gettext", "doic_gettext_cancel_text", 10, 3);
